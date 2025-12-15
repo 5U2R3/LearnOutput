@@ -1,17 +1,18 @@
-# Malware Analysis Report
+# Static Analysis Report
 
 ## 1. Administrative Information
 - **Case ID:** `[YYYYMMDD-###]`
 - **Analyst:** `[Name]`
 - **Analysis Date:** `[YYYY-MM-DD]`
 - **Sample Name (Original):** `[Filename]`
-- **Source / Acquisition:** `https://news.bloomberglaw.com/white-collar-and-criminal-law/insight-business-email-compromise-who-bears-the-loss`
 
 ## 1. Executive Summary (Overview)
 
 ### 1.1 Sample Identity & Metadata
 *必須項目は必ず埋め、不明な場合は N/A と記載すること。*
-
+```text
+sigcheck.exe -accepteula -nobanner -a -h -i -vt -v 
+```
 | Attribute | Value | Note / Anomaly |
 | :--- | :--- | :--- |
 | **SHA256** | `[Hash]` | |
@@ -24,16 +25,7 @@
 | **Architecture** | `[x86 / x64 / .NET]` | |
 | **Signature** | `[Signed / Unsigned]` | Signer: `[Name]` |
 | **Entropy** | `[Score 0-8]` | >7.0 suggests packing |
-
-### 1.2 High-Level Assessment
-- **Verdict:** `[Malicious / Suspicious / Benign]`
-- **Family / Label:** `[e.g., Emotet, CobaltStrike Beacon]`
-- **Confidence Level:** `[High / Medium / Low]`
-
-**Key Findings:**
-1.  **Capabilities:** `[要約: C2通信、ダウンローダー機能など]`
-2.  **Infrastructure:** `[要約: 通信先の特徴]`
-3.  **Obfuscation:** `[要約: パッキングや難読化の手法]`
+| **VT detection** | `[0/77]` | |
 
 ---
 
@@ -76,3 +68,12 @@ cmd.exe /c start
 ```
 
 ### 2.4 Inference from Static Triage
+
+- **Verdict:** `[Malicious / Suspicious / Benign]`
+- **Family / Label:** `[e.g., Emotet, CobaltStrike Beacon]`
+- **Confidence Level:** `[High / Medium / Low]`
+
+**Key Findings:**
+1.  **Capabilities:** `[要約: C2通信、ダウンローダー機能など]`
+2.  **Infrastructure:** `[要約: 通信先の特徴]`
+3.  **Obfuscation:** `[要約: パッキングや難読化の手法]`
