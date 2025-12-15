@@ -58,7 +58,9 @@ sigcheck.exe -accepteula -nobanner -a -h -i -vt -v
 
 ### 2.3 Interesting Strings
 *FLOSS等で抽出した特徴的な文字列（IP、パス、typo、独自識別子など）。*
-
+```text
+floss.exe  
+```
 ```text
 [http://evil.com/gate.php](http://evil.com/gate.php)
 C:\Users\Public\update.exe
@@ -68,8 +70,10 @@ cmd.exe /c start
 ```
 
 ### 2.4 Inference from Static Triage
-
-- **Verdict:** `[Malicious / Suspicious / Benign]`
+```text
+capa.exe
+```
+- **ラベル:** `[Malicious(悪性)/ Suspicious(疑わしい) / Benign(良性)`
 - **Family / Label:** `[e.g., Emotet, CobaltStrike Beacon]`
 - **Confidence Level:** `[High / Medium / Low]`
 
