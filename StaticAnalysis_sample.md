@@ -1,14 +1,14 @@
 # Static Analysis Report
 
-## 1. Administrative Information
+## Administrative Information
 - **Case ID:** `[YYYYMMDD-###]`
 - **Analyst:** `[Name]`
 - **Analysis Date:** `[YYYY-MM-DD]`
 - **Sample Name (Original):** `[Filename]`
 
-## 1. Executive Summary (Overview)
+## Executive Summary (Overview)
 
-### 1.1 Sample Identity & Metadata
+### Sample Identity & Metadata
 *必須項目は必ず埋め、不明な場合は N/A と記載すること。*
 ```text
 sigcheck.exe -accepteula -nobanner -a -h -i -vt -v 
@@ -29,17 +29,9 @@ sigcheck.exe -accepteula -nobanner -a -h -i -vt -v
 
 ---
 
-## 2. Static Analysis Findings
+## Static Analysis Findings
 
-### 2.1 PE Structure & Header Anomalies
-*異常値（セクション名、サイズ不整合、RWE権限など）のみ記述。*
-
-| Section Name | Virtual Size | Raw Size | Characteristics / Entropy |
-| :--- | :--- | :--- | :--- |
-| `.text` | `0x...` | `0x...` | `Execute/Read` |
-| `[Suspicious]` | `0x...` | `0x...` | `[High Entropy / RWX]` |
-
-### 2.2 Imports (IAT) & Capabilities
+### Imports (IAT) & Capabilities
 *機能に関連する重要APIのみを抜粋して記述。*
 
 * **Networking (WinINet / Winsock):**
@@ -56,7 +48,7 @@ sigcheck.exe -accepteula -nobanner -a -h -i -vt -v
     * `CryptDecrypt`
     * `[Other APIs...]`
 
-### 2.3 Interesting Strings
+### Interesting Strings
 *FLOSS等で抽出した特徴的な文字列（IP、パス、typo、独自識別子など）。*
 ```text
 floss.exe  
@@ -68,16 +60,34 @@ User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
 cmd.exe /c start
 [Unique Mutex Name]
 ```
+### DiE/PEiD（パッカー / コンパイラ推定）
+| Item | Value |
+|---|---|
+| Version |  |
+| Result: Packer |  |
+| Result: Compiler/Linker |  |
+| Notes |  |
+| Evidence ref（detection tree / screenshot / export） |  |
 
-### 2.4 Inference from Static Triage
+### capa（capability列挙)
 ```text
 capa.exe
 ```
-- **ラベル:** `[Malicious(悪性)/ Suspicious(疑わしい) / Benign(良性)`
-- **Family / Label:** `[e.g., Emotet, CobaltStrike Beacon]`
-- **Confidence Level:** `[High / Medium / Low]`
+| Item | Value |
+|---|---|
+| Version |  |
+| Ruleset version/commit |  |
+| Top capabilities（重要なものだけ） | ・1<br>・2<br>・3<br>|
 
-**Key Findings:**
-1.  **Capabilities:** `[要約: C2通信、ダウンローダー機能など]`
-2.  **Infrastructure:** `[要約: 通信先の特徴]`
-3.  **Obfuscation:** `[要約: パッキングや難読化の手法]`
+### capa findings（rule + 根拠位置）
+| Rule (capability) | Category/Namespace | Evidence locations（VA/RVA/func） | Notes |
+|---|---|---|---|
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+
+## 推測
+*マルウェアの種類及び動的解析で確認する箇所*
+```text
+
+```
