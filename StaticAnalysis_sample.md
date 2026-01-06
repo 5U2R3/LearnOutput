@@ -65,7 +65,9 @@ cmd.exe /c start
 
 ### capa（capability列挙)
 ```text
-capa.exe
+capa.exe -v
+https://github.com/MBCProject/mbc-markdown?tab=readme-ov-file#malware-objective-descriptions
+https://github.com/mandiant/capa-rules/tree/master?tab=readme-ov-file#namespace-organization
 ```
 | Item | Value |
 |---|---|
@@ -73,11 +75,13 @@ capa.exe
 | Ruleset version/commit |  |
 
 ### capa findings（rule + 根拠位置）
-| Rule (capability) | Category/Namespace | Evidence locations（VA/RVA/func） | Notes |
+| Rule (capability) | Category/Namespace | matches | Notes |
 |---|---|---|---|
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
 
 ## 推測
 *マルウェアの種類及び動的解析で確認する箇所*
